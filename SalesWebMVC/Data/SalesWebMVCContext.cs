@@ -12,7 +12,11 @@ namespace SalesWebMVC.Data
     {
         public SalesWebMVCContext (DbContextOptions<SalesWebMVCContext> options)
             : base(options)
+        { }
+
+        protected override void OnModelCreating(ModelBuilder builder)
         {
+            base.OnModelCreating(builder);
         }
 
         public DbSet<SalesWebMVC.Models.Department> Department { get; set; }
